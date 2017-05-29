@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<title>SWT Demo</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
+<script>
+    function updateNote(){
+        var text = document.getElementById('fname').value;
+        console.log(text);
+        var http = new XMLHttpRequest();
+        var url = "/note";
+        http.open("POST",url,true);
+
+        http.onreadystatechange = function(){
+            if(http.readyState == 4 && http.status == 200){
+                console.log("OK update");
+            }
+        }
+        http.send(text);
+        document.getElementById("note").innerText = text;
+    }
+    
+    function getNote(){
+        var http = new XMLHttpRequest();
+        var url = "/note";
+        http.open("GET",url,true);
+        http.onreadystatechange = function(){
+            if(http.readyState == 4 && http.status == 200){
+                document.getElementById("note").innerText = http.responseText;
+            }
+        }
+        http.send(null);
+    }
+</script>
+<body onload="getNote()">
+{% if name %}
+    <div>Hello {{ name }}!</div>
+{% else %}
+    <div>Hello</div>
+{% endif %}
+<input type="text" id="fname">
+<button type="button" onclick="updateNote()">update</button></br>
+</br>
+<div>Note:</div>
+<div id="note"></div>
