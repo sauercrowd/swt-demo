@@ -5,7 +5,7 @@ from flask import make_response
 import time 
 import redis
 
-r = redis.Redis(host='127.0.0.1',port=32768)
+r = redis.Redis(host='redis',port=6379)
 
 import socket
 ip = socket.gethostname()
@@ -54,3 +54,6 @@ def setNote(uid, note):
 
 def getNote(uid):
     return r.get(uid)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=False)
