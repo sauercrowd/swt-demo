@@ -1,3 +1,25 @@
+@media only screen and (min-width: 1028px){
+    body{
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    #verticalWrapper{
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 1027px){
+    #verticalWrapper{
+        flex-grow: 1;
+    }
+
+    #horizontalWrapper{
+        flex-grow: 1;
+    }
+}
+
 html{
     height: 100%;
 }
@@ -5,16 +27,12 @@ html{
 body{
     height: 100%;
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
     padding: 0px;
     margin: 0px;
 }
 
 #verticalWrapper{
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
 }
 
 #horizontalWrapper{

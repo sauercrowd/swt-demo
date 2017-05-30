@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
 <title>SWT Demo</title>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}" />
 <script>
@@ -30,7 +31,7 @@
         http.send(null);
     }
 </script>
-<body onload="getNote()">
+<body>
 <div id="verticalWrapper">
 <div id="horizontalWrapper">
 <div id="greeter">Hello from <div id="hostname">{{ name }}</div></div>
