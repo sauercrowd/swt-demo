@@ -29,7 +29,7 @@
         http.send(null);
     }
 </script>
-<body onload="getNote()">
+<body>
 {% if name %}
 <div>Hello from <div id="hostname">{{ name }}</div></div>
 {% else %}
@@ -39,4 +39,4 @@
 <button type="button" onclick="updateNote()">update</button></br>
 </br>
 <div>Note:</div>
-<div id="note"></div>
+<div id="note">{{ note }}</div>

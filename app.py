@@ -14,7 +14,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html',name=str(ip))
+    note=''
+    if 'uid' in request.cookies:
+        note=getNote(request.cookies['uid']
+    return render_template('index.html',name=str(ip),note=note)
 
 @app.route('/note',methods=['GET','POST'])
 def note():
