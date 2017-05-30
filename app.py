@@ -21,7 +21,7 @@ def note():
     if request.method == 'POST':
         request.get_data()
         note = request.data
-	resp = make_response('ok')
+        resp = make_response('ok')
         uid = 'x'
         if 'uid' not in request.cookies:
             uid = str("%.20f" % time.time())
