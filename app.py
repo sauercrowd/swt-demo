@@ -17,7 +17,7 @@ def index():
     note=''
     if 'uid' in request.cookies:
         note=getNote(request.cookies['uid'])
-    return render_template('index.html',name=str(ip),note=note)
+    return render_template('index.html',name=str(ip),note=note.decode("utf-8"))
 
 @app.route('/note',methods=['GET','POST'])
 def note():
