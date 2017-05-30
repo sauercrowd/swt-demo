@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <title>SWT Demo</title>
+<link rel="stylesheet" type="text/css" href="/static/style.css" />
 <script>
     function updateNote(){
         var text = document.getElementById('fname').value;
@@ -29,14 +30,12 @@
         http.send(null);
     }
 </script>
-<body>
-{% if name %}
-<div>Hello from <div id="hostname">{{ name }}</div></div>
-{% else %}
-    <div>Hello</div>
-{% endif %}
+<body onload="getNote()">
+<div id="verticalWrapper">
+<div id="horizontalWrapper">
+<div id="greeter">Hello from <div id="hostname">{{ name }}</div></div>
 <input type="text" id="fname">
-<button type="button" onclick="updateNote()">update</button></br>
+<button type="button" onclick="updateNote()" id="updateButton">update</button></br>
 </br>
-<div>Note:</div>
+<div id="note_greeter">Note:</div>
 <div id="note">{{ note }}</div>
