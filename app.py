@@ -21,16 +21,16 @@ def note():
     if request.method == 'POST':
         request.get_data()
         note = request.data
+	resp = make_response('ok')
         uid = 'x'
         if 'uid' not in request.cookies:
-            resp = make_response('not set')
             uid = str("%.20f" % time.time())
             resp.set_cookie('uid',uid)
             print("UID: "+uid)
         else:
             uid = request.cookies['uid']
         setNote(uid,note)
-        return 'ok'
+        return resp
     else:
         if 'uid' in request.cookies:
             res = getNote(request.cookies['uid'])
@@ -39,15 +39,6 @@ def note():
             return res
         else:
             return ''
-
-
-@app.route('/set')
-def set(uid):
-    r.set('foo','bar')
-    value = r.get('foo')
-    print(value)
-    return value
-
 
 def setNote(uid, note):
     r.set(uid,note)
