@@ -1,6 +1,0 @@
-# Vorgehen
-1. `docker service create --name redis --network swt-presentation-overlay redis`
-2. `docker service update --image jonadev95/swt-demo backend`
-3. `docker service create --update-delay 30s --name backend --replicas 1 --network swt-presentation-overlay --publish 80:5000 jonadev95/swt-demo`
-4. `docker service scale backend=3`
-5. `docker service update --image jonadev95/swt-demo-v2 backend`
