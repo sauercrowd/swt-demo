@@ -4,10 +4,10 @@ from flask import request
 from flask import make_response
 import time 
 import redis
+import socket
 
 r = redis.Redis(host='redis',port=6379)
 
-import socket
 ip = socket.gethostname()
 
 app = Flask(__name__)
