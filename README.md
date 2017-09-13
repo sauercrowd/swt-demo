@@ -1,13 +1,14 @@
-# Flask redis note app
+# Flask Redis note app
 
-An app which I created to demonstrate docker swarm capabilities.
+A simple app which I created to demonstrate docker swarm capabilities.
 
-The flask app is stateless, which means it could be horizontally scaled with ease.
+The flask app is stateless, which means it could be horizontally scaled without any issues.
 
 ## App Demo
 
 ![](./demo.gif)
 
+It displays the hostname of the machine in the browser (`jonas` in this case), to make it more visible if different machines/containers are used.
 
 ## Steps for Docker Swarm demonstration
 
